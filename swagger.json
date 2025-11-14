@@ -5,92 +5,69 @@
     "description": "API documentation for Movies Project",
     "version": "1.0.0"
   },
-  "host": "cse341-project2.onrender.com",
-  "basePath": "/movies",
+  "host": "cse341-project2-o5vk.onrender.com",
+  "basePath": "/",
   "schemes": ["https"],
   "paths": {
-    "/": {
+    "/movies": {
       "get": {
-        "description": "Get all movies",
+        "summary": "Get all movies",
         "responses": {
-          "200": { "description": "OK" },
-          "500": { "description": "Internal Server Error" }
+          "200": { "description": "Success" }
         }
       },
       "post": {
-        "description": "Create a new movie",
+        "summary": "Create movie",
         "parameters": [
           {
-            "name": "movie",
             "in": "body",
+            "name": "movie",
             "required": true,
-            "schema": { "$ref": "#/definitions/Movie" }
+            "schema": {
+              "$ref": "#/definitions/Movie"
+            }
           }
         ],
         "responses": {
-          "201": { "description": "Created" },
-          "412": { "description": "Validation Failed" },
-          "500": { "description": "Internal Server Error" }
+          "201": { "description": "Movie created" }
         }
       }
     },
-    "/{id}": {
+    "/movies/{id}": {
       "get": {
-        "description": "Get movie by ID",
+        "summary": "Get movie by ID",
         "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
+          { "name": "id", "in": "path", "required": true, "type": "string" }
         ],
         "responses": {
-          "200": { "description": "OK" },
-          "400": { "description": "Invalid ID format" },
-          "404": { "description": "Movie not found" },
-          "500": { "description": "Internal Server Error" }
+          "200": { "description": "Success" },
+          "404": { "description": "Not found" }
         }
       },
       "put": {
-        "description": "Update movie by ID",
+        "summary": "Update movie",
         "parameters": [
+          { "name": "id", "in": "path", "required": true, "type": "string" },
           {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "movie",
             "in": "body",
+            "name": "movie",
             "required": true,
-            "schema": { "$ref": "#/definitions/Movie" }
+            "schema": {
+              "$ref": "#/definitions/Movie"
+            }
           }
         ],
         "responses": {
-          "200": { "description": "Updated" },
-          "400": { "description": "Invalid ID format" },
-          "404": { "description": "Movie not found" },
-          "412": { "description": "Validation Failed" },
-          "500": { "description": "Internal Server Error" }
+          "200": { "description": "Updated" }
         }
       },
       "delete": {
-        "description": "Delete movie by ID",
+        "summary": "Delete movie",
         "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
+          { "name": "id", "in": "path", "required": true, "type": "string" }
         ],
         "responses": {
-          "200": { "description": "Deleted" },
-          "400": { "description": "Invalid ID format" },
-          "404": { "description": "Movie not found" },
-          "500": { "description": "Internal Server Error" }
+          "200": { "description": "Deleted" }
         }
       }
     }
@@ -100,11 +77,13 @@
       "type": "object",
       "properties": {
         "title": { "type": "string" },
+        "directorId": { "type": "string" },
         "genre": { "type": "string" },
-        "director": { "type": "string" },
-        "releaseYear": { "type": "integer" }
-      },
-      "required": ["title", "genre", "director", "releaseYear"]
+        "releaseYear": { "type": "number" },
+        "duration": { "type": "number" },
+        "language": { "type": "string" },
+        "rating": { "type": "number" }
+      }
     }
   }
 }
