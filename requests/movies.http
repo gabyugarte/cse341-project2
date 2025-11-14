@@ -1,4 +1,4 @@
-@baseUrl = http://localhost:3000
+@baseUrl = https://cse341-project2-o5vk.onrender.com
 
 ### -------------------------
 ### GET ALL MOVIES
