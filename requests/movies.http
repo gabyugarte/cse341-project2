@@ -1,0 +1,52 @@
+@baseUrl = http://localhost:3000
+
+### -------------------------
+### GET ALL MOVIES
+### -------------------------
+GET {{baseUrl}}/movies
+
+
+### -------------------------
+### GET MOVIE BY ID
+### -------------------------
+GET {{baseUrl}}/movies/691791f484328096de02e54e
+
+
+### -------------------------
+### CREATE MOVIE
+### -------------------------
+POST {{baseUrl}}/movies
+Content-Type: application/json
+
+{
+  "title": "Interstellar",
+  "directorId": "12345",
+  "genre": "Sci-Fi",
+  "releaseYear": 2014,
+  "duration": 169,
+  "language": "English",
+  "rating": 8.6
+}
+
+
+### -------------------------
+### UPDATE MOVIE
+### -------------------------
+PUT {{baseUrl}}/movies/691791f484328096de02e54e 
+Content-Type: application/json
+
+{
+  "title": "Interstellar (Updated)",
+  "directorId": "12345",
+  "genre": "Sci-Fi",
+  "releaseYear": 2014,
+  "duration": 170,
+  "language": "English",
+  "rating": 9.0
+}
+
+
+### -------------------------
+### DELETE MOVIE
+### -------------------------
+DELETE {{baseUrl}}/movies/691791f484328096de02e54e
