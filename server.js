@@ -12,6 +12,7 @@ const swaggerDocument = require('./swagger.json');
 
 // Routes
 const moviesRoutes = require('./routes/movies');
+const directorsRoutes = require('./routes/directors');
 
 const app = express();
 
@@ -24,6 +25,9 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Movies API routes
 app.use('/movies', moviesRoutes);
+
+// Directors API routes
+app.use('/directors', directorsRoutes);
 
 // Root endpoint
 app.get('/', (req, res) => {

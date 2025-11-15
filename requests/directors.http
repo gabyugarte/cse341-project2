@@ -1,0 +1,30 @@
+@baseUrl = https://cse341-project2-o5vk.onrender.com
+
+### GET ALL DIRECTORS
+GET {{baseUrl}}/directors
+
+### GET DIRECTOR BY ID
+GET {{baseUrl}}/directors/{id}
+
+### CREATE DIRECTOR
+POST {{baseUrl}}/directors
+Content-Type: application/json
+
+{
+  "name": "Christopher Nolan",
+  "birthYear": 1970,
+  "nationality": "American"
+}
+
+### UPDATE DIRECTOR
+PUT {{baseUrl}}/directors/{id}
+Content-Type: application/json
+
+{
+  "name": "Christopher Nolan Updated",
+  "birthYear": 1970,
+  "nationality": "British-American"
+}
+
+### DELETE DIRECTOR
+DELETE {{baseUrl}}/directors/{id}
