@@ -72,67 +72,66 @@
       }
     },
     "/directors": {
-  "get": {
-    "summary": "Get all directors",
-    "responses": {
-      "200": { "description": "Success" }
-    }
-  },
-  "post": {
-    "summary": "Create director",
-    "parameters": [
-      {
-        "in": "body",
-        "name": "director",
-        "required": true,
-        "schema": {
-          "$ref": "#/definitions/Director"
+      "get": {
+        "summary": "Get all directors",
+        "responses": {
+          "200": { "description": "Success" }
+        }
+      },
+      "post": {
+        "summary": "Create director",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "director",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Director"
+            }
+          }
+        ],
+        "responses": {
+          "201": { "description": "Director created" }
         }
       }
-    ],
-    "responses": {
-      "201": { "description": "Director created" }
-    }
-  }
-},
-"/directors/{id}": {
-  "get": {
-    "summary": "Get director by ID",
-    "parameters": [
-      { "name": "id", "in": "path", "required": true, "type": "string" }
-    ],
-    "responses": {
-      "200": { "description": "Success" },
-      "404": { "description": "Not found" }
-    }
-  },
-  "put": {
-    "summary": "Update director",
-    "parameters": [
-      { "name": "id", "in": "path", "required": true, "type": "string" },
-      {
-        "in": "body",
-        "name": "director",
-        "schema": {
-          "$ref": "#/definitions/Director"
+    },
+    "/directors/{id}": {
+      "get": {
+        "summary": "Get director by ID",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "type": "string" }
+        ],
+        "responses": {
+          "200": { "description": "Success" },
+          "404": { "description": "Not found" }
+        }
+      },
+      "put": {
+        "summary": "Update director",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "type": "string" },
+          {
+            "in": "body",
+            "name": "director",
+            "schema": {
+              "$ref": "#/definitions/Director"
+            }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Updated" }
+        }
+      },
+      "delete": {
+        "summary": "Delete director",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "type": "string" }
+        ],
+        "responses": {
+          "200": { "description": "Deleted" }
         }
       }
-    ],
-    "responses": {
-      "200": { "description": "Updated" }
     }
-  },
-  "delete": {
-    "summary": "Delete director",
-    "parameters": [
-      { "name": "id", "in": "path", "required": true, "type": "string" }
-    ],
-    "responses": {
-      "200": { "description": "Deleted" }
-    }
-  }
-}
-
   },
   "definitions": {
     "Movie": {

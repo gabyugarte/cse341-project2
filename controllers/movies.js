@@ -37,6 +37,7 @@ const getMovieById = async (req, res) => {
   }
 };
 
+// POST
 const createMovie = async (req, res) => {
   try {
     const payload = { ...req.body };
@@ -48,6 +49,7 @@ const createMovie = async (req, res) => {
   }
 };
 
+// PUT
 const updateMovie = async (req, res) => {
   try {
     let movieId = req.params.id;

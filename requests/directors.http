@@ -4,20 +4,20 @@
 GET {{baseUrl}}/directors
 
 ### GET DIRECTOR BY ID
-GET {{baseUrl}}/directors/{id}
+GET {{baseUrl}}/directors/691890fce6a3dda8daba3f6f
 
 ### CREATE DIRECTOR
 POST {{baseUrl}}/directors
 Content-Type: application/json
 
 {
-  "name": "Christopher Nolan",
-  "birthYear": 1970,
-  "nationality": "American"
+  "name": "Maddy Suncion",
+  "birthYear": 1980,
+  "nationality": "French"
 }
 
 ### UPDATE DIRECTOR
-PUT {{baseUrl}}/directors/{id}
+PUT {{baseUrl}}/directors/691890fce6a3dda8daba3f6f
 Content-Type: application/json
 
 {
