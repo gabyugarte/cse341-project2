@@ -6,9 +6,6 @@ const { isAuthenticated } = require('../middleware/authenticate');
 
 router.get('/', moviesController.getAllMovies);
 router.get('/:id', moviesController.getMovieById);
-// router.post('/', validation.saveMovie, moviesController.createMovie);
-// router.put('/:id', validation.saveMovie, moviesController.updateMovie);
-// router.delete('/:id', moviesController.deleteMovie);
 router.post('/', isAuthenticated, validation.saveMovie, moviesController.createMovie);
 router.put('/:id', isAuthenticated, validation.saveMovie, moviesController.updateMovie);
 router.delete('/:id', isAuthenticated, moviesController.deleteMovie);

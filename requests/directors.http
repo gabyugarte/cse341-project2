@@ -11,7 +11,7 @@ POST {{baseUrl}}/directors
 Content-Type: application/json
 
 {
-  "name": "Maddy Suncion",
+  "name": "Laia Suncion",
   "birthYear": 1980,
   "nationality": "French"
 }
@@ -21,9 +21,9 @@ PUT {{baseUrl}}/directors/691890fce6a3dda8daba3f6f
 Content-Type: application/json
 
 {
-  "name": "Christopher Nolan Updated",
+  "name": "Christopher Nolan",
   "birthYear": 1970,
-  "nationality": "British-American"
+  "nationality": "British-peruvian"
 }
 
 ### DELETE DIRECTOR
