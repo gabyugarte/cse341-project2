@@ -23,7 +23,7 @@ const swaggerDocument = require("./swagger.json");
 const app = express();
 
 /* -------------------------------------
-   1. CORS (IMPORTANTE para sesiones!!!)
+   1. CORS 
 -------------------------------------- */
 app.use(
   cors({
@@ -49,7 +49,7 @@ app.use(
     cookie: {
       httpOnly: true,
       secure: false,
-      maxAge: 1000 * 60 * 60, // 1 hora
+      maxAge: 1000 * 60 * 60, 
     },
   })
 );
@@ -77,7 +77,7 @@ passport.serializeUser((user, done) => done(null, user));
 passport.deserializeUser((user, done) => done(null, user));
 
 /* -------------------------------------
-   5. Rutas (Swagger SI debe ir al final)
+   5. Rutas 
 -------------------------------------- */
 app.use("/", authRoutes);
 
@@ -85,7 +85,7 @@ app.use("/movies", moviesRoutes);
 app.use("/directors", directorsRoutes);
 
 /* -------------------------------------
-   6. Swagger (lo dejamos público)
+   6. Swagger
 -------------------------------------- */
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 

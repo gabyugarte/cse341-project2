@@ -11,7 +11,7 @@ POST {{baseUrl}}/directors
 Content-Type: application/json
 
 {
-  "name": "Laia Suncion",
+  "name": "Mariona Suncion",
   "birthYear": 1980,
   "nationality": "French"
 }
